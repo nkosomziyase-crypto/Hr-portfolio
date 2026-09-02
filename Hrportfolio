@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nkosomzi Yase — Human Resources Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1E2A38;
+    --ink-soft: #5B6472;
+    --paper: #EFE9DC;
+    --paper-deep: #E4DDCC;
+    --gold: #B8862E;
+    --gold-deep: #93691E;
+    --teal: #33534C;
+    --teal-deep: #243C37;
+    --line: #C9C1AC;
+  }
+  *{ box-sizing: border-box; }
+  html{ -webkit-text-size-adjust: 100%; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", sans-serif;
+    line-height: 1.55;
+  }
+  .page{ max-width: 640px; margin: 0 auto; }
+
+  /* ---- header ---- */
+  header{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 44px 28px 34px;
+    position: relative;
+  }
+  header::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-10px;
+    height:10px;
+    background: var(--gold);
+  }
+  .name{
+    font-family:"Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(30px, 8vw, 40px);
+    margin: 0 0 6px;
+    letter-spacing: 0.2px;
+  }
+  .role{
+    font-size: 16px;
+    color: #D9CDB0;
+    margin: 0 0 18px;
+  }
+  .meta-row{
+    font-size: 14px;
+    color: #B9C4C1;
+    margin: 0 0 22px;
+  }
+  .contact-row{
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-block;
+    font-family:"IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration:none;
+    padding: 11px 18px;
+    border: 1.5px solid var(--gold);
+    color: var(--paper);
+    background: transparent;
+  }
+  .btn.solid{
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+
+  /* ---- folder tab section marker ---- */
+  section{ padding: 30px 28px; border-bottom: 1px solid var(--line); }
+  .tab{
+    display:inline-block;
+    background: var(--teal);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px 6px;
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+    margin-bottom: 14px;
+  }
+  h2{
+    font-family:"Fraunces", serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  p{ margin: 0 0 10px; color: var(--ink); max-width: 62ch; }
+  .muted{ color: var(--ink-soft); font-size: 14.5px; }
+
+  /* ---- at a glance ---- */
+  .glance p{ font-size: 16px; }
+
+  /* ---- experience ---- */
+  .job{ margin-bottom: 22px; }
+  .job:last-child{ margin-bottom: 0; }
+  .job-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-bottom: 4px;
+  }
+  .job-title{ font-weight: 600; font-size: 16px; }
+  .job-org{ color: var(--gold-deep); font-weight: 600; font-size: 14.5px; }
+  .job-time{ font-size: 13px; color: var(--ink-soft); }
+  ul.job-list{ margin: 8px 0 0; padding-left: 18px; }
+  ul.job-list li{ margin-bottom: 5px; font-size: 15px; }
+
+  /* ---- skills ---- */
+  .tags{ display:flex; flex-wrap: wrap; gap: 8px; }
+  .tag{
+    border: 1px solid var(--teal);
+    color: var(--teal-deep);
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: #E7E1D1;
+  }
+
+  /* ---- featured project ---- */
+  .featured{
+    background: var(--paper-deep);
+    border: 1px solid var(--line);
+    padding: 20px;
+  }
+  .featured .job-title{ margin-bottom: 4px; }
+  .featured a{
+    color: var(--gold-deep);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--gold);
+  }
+
+  /* ---- education ---- */
+  .edu-item{ margin-bottom: 12px; }
+  .edu-item:last-child{ margin-bottom: 0; }
+  .edu-title{ font-weight: 600; font-size: 15px; }
+
+  /* ---- beyond hr ---- */
+  .beyond p{ font-size: 15px; }
+
+  /* ---- references ---- */
+  .ref-note{ font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ---- footer cta ---- */
+  footer{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 34px 28px 40px;
+    text-align: left;
+  }
+  footer h2{ color: var(--paper); }
+  footer .contact-row{ margin-top: 14px; }
+
+  @media (prefers-reduced-motion: no-preference){
+    header{ animation: rise 0.6s ease-out; }
+    @keyframes rise{
+      from{ opacity: 0; transform: translateY(8px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Nkosomzi Yase</div>
+    <div class="role">Human Resources Professional</div>
+    <div class="meta-row">Bekkersdal, Gauteng &nbsp;·&nbsp; Branch Consultant, Finbond Mutual Bank</div>
+    <div class="contact-row">
+      <a class="btn solid" href="https://www.linkedin.com/in/nkosomzi-yase-33161525n" target="_blank" rel="noopener">LinkedIn profile</a>
+      <a class="btn" href="https://wa.me/27603253332" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </header>
+
+  <section class="glance">
+    <span class="tab">At a glance</span>
+    <p>HR and administration professional with hands-on experience in employee records management, recruitment coordination, workforce audits, and disciplinary documentation. HR Administrator background from Deloitte and Scorpion Tactical, now applying that same accuracy and people-first approach as a Branch Consultant at Finbond Mutual Bank.</p>
+    <p>Recently added a practical AI skill set on top of core HR — built and deployed a working productivity tool during a Naspers-backed accelerator programme.</p>
+  </section>
+
+  <section class="experience">
+    <span class="tab">Experience</span>
+    <h2>Work history</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Branch Consultant</span>
+        <span class="job-time">Current</span>
+      </div>
+      <div class="job-org">Finbond Mutual Bank — Germiston</div>
+      <ul class="job-list">
+        <li>Client-facing branch operations at the Golden Walk Shopping Centre branch</li>
+        <li>Applying HR-grade attention to accuracy, documentation, and confidentiality in a financial services setting</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">HR Administrator</span>
+      </div>
+      <div class="job-org">Scorpion Tactical</div>
+      <ul class="job-list">
+        <li>Managed employee records and maintained accurate, audit-ready personnel files</li>
+        <li>Coordinated recruitment activity from requisition through to onboarding</li>
+        <li>Supported workforce audits and prepared disciplinary documentation</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">HR Administrator</span>
+      </div>
+      <div class="job-org">Deloitte</div>
+      <ul class="job-list">
+        <li>Gained foundational experience across HR operations and employee record-keeping</li>
+        <li>Worked with SAP SuccessFactors and ServiceNow in day-to-day HR administration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="skills">
+    <span class="tab">Skills</span>
+    <h2>Where I add value</h2>
+    <div class="tags">
+      <span class="tag">HR Operations</span>
+      <span class="tag">Recruitment Coordination</span>
+      <span class="tag">Employee Relations</span>
+      <span class="tag">Workforce Audits</span>
+      <span class="tag">Employee Records Management</span>
+      <span class="tag">Disciplinary Documentation</span>
+      <span class="tag">SAP SuccessFactors</span>
+      <span class="tag">ServiceNow</span>
+    </div>
+  </section>
+
+  <section class="project">
+    <span class="tab">Featured project</span>
+    <h2>Workday Assistant</h2>
+    <div class="featured">
+      <div class="job-title">AI-powered workplace productivity tool</div>
+      <p class="muted">Built during the CAPACITI × Naspers Labs AI Skills Accelerator</p>
+      <p>A Smart Email Generator, Meeting Notes Summarizer, and AI Task Planner in one tool — designed to save admin time on repetitive HR and office tasks.</p>
+      <p><a href="https://workday-assistant.lovable.app" target="_blank" rel="noopener">workday-assistant.lovable.app</a></p>
+      <p class="muted">Code: github.com/nkosomziyase-crypto/workday-assistant</p>
+    </div>
+  </section>
+
+  <section class="education">
+    <span class="tab">Education &amp; certifications</span>
+    <div class="edu-item">
+      <div class="edu-title">National Diploma, Human Resources Management</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-title">AI Skills Accelerator (ASA 13)</div>
+      <div class="muted">CAPACITI × Naspers Labs</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-title">Google AI Essentials</div>
+      <div class="muted">Coursera</div>
+    </div>
+  </section>
+
+  <section class="beyond">
+    <span class="tab">Beyond HR</span>
+    <p>Gospel pianist of over ten years, playing by ear and leading choir rehearsals at church. Also a committed football fan. Faith and music keep the same discipline and attentiveness that show up in my HR work.</p>
+  </section>
+
+  <section class="references">
+    <span class="tab">References</span>
+    <p class="ref-note">Available on request.</p>
+  </section>
+
+  <footer>
+    <h2>Let's connect</h2>
+    <p style="color:#D9CDB0;">Open to HR, administration, and operations opportunities.</p>
+    <div class="contact-row">
+      <a class="btn solid" href="https://www.linkedin.com/in/nkosomzi-yase-33161525n" target="_blank" rel="noopener">LinkedIn profile</a>
+      <a class="btn" href="https://wa.me/27603253332" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
