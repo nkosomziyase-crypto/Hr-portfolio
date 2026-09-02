@@ -184,9 +184,10 @@
 <div class="page">
 
   <header>
-    <div class="name">Nkosomzi Yase</div>
+    <img class="photo" src="profile.jpg" alt="Nkosomzi Yase">
+<div class="name">Nkosomzi Yase</div>
     <div class="role">Human Resources Professional</div>
-    <div class="meta-row">Bekkersdal, Gauteng &nbsp;·&nbsp; Branch Consultant, Finbond Mutual Bank</div>
+    <div class="meta-row">Westonaria, Gauteng &nbsp;·&nbsp; Branch Consultant, Finbond Mutual Bank</div>
     <div class="contact-row">
       <a class="btn solid" href="https://www.linkedin.com/in/nkosomzi-yase-33161525n" target="_blank" rel="noopener">LinkedIn profile</a>
       <a class="btn" href="https://wa.me/27603253332" target="_blank" rel="noopener">Message on WhatsApp</a>
